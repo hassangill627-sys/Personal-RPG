@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f1117">
+    <title>Personal RPG</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="login-screen" class="login-screen">
+
+    <div class="login-card">
+
+        <p class="eyebrow">
+            PERSONAL RPG
+        </p>
+
+        <h1>Welcome Back</h1>
+
+        <p class="muted">
+            Log in to continue your journey.
+        </p>
+
+        <div class="login-form">
+
+            <label for="login-username">
+                Username
+            </label>
+
+            <input
+                type="text"
+                id="login-username"
+                placeholder="Enter your username"
+                autocomplete="username"
+            >
+
+            <label for="login-password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="login-password"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+            >
+
+            <button
+                id="login-button"
+                class="primary-button"
+                type="button"
+            >
+                Log In
+            </button>
+
+            <p
+                id="login-message"
+                class="login-message"
+            ></p>
+
+        </div>
+
+    </div>
+
+  </div>
+
+<div class="app">
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="topbar">
+
+        <div class="brand">
+
+            <span class="brand-mark">✦</span>
+
+            <div>
+                <h1>Personal RPG</h1>
+                <p>Level up your real life.</p>
+            </div>
+
+        </div>
+
+        <div class="level-badge">
+            <span>LVL</span>
+            <strong id="player-level">1</strong>
+        </div>
+
+    </header>
+
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main-content">
+
+
+        <!-- ==================== HOME ==================== -->
+        <section id="home-tab" class="tab active">
+
+            <div class="welcome">
+
+                <p class="eyebrow">PLAYER PROFILE</p>
+
+                <h2>Welcome back.</h2>
+
+                <p class="muted">
+                    Keep making progress, one action at a time.
+                </p>
+
+            </div>
+
+
+            <!-- Player Progress -->
+            <article class="card player-card">
+
+                <div class="card-header">
+
+                    <div>
+                        <p class="eyebrow">PLAYER LEVEL</p>
+
+                        <h3>
+                            Level
+                            <span id="home-level">1</span>
+                        </h3>
+                    </div>
+
+                    <div class="xp-numbers">
+
+                        <strong id="player-xp">0</strong>
+
+                        <span>
+                            /
+                            <span id="xp-required">100</span>
+                            XP
+                        </span>
+
+                    </div>
+
+                </div>
+
+                <div class="progress-track">
+
+                    <div
+                        id="player-xp-bar"
+                        class="progress-fill"
+                    ></div>
+
+                </div>
+
+                <p class="progress-label">
+
+                    <span id="total-xp">0</span>
+                    total XP earned
+
+                </p>
+
+            </article>
+
+
+            <!-- Quick Stats -->
+            <div class="stats-grid">
+
+                <article class="card stat-card">
+
+                    <span class="stat-icon">◷</span>
+
+                    <div>
+
+                        <p class="eyebrow">FOCUS</p>
+
+                        <strong>
+                            <span id="focus-minutes">0</span>
+                            min
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card stat-card">
+
+                    <span class="stat-icon">✓</span>
+
+                    <div>
+
+                        <p class="eyebrow">QUESTS</p>
+
+                        <strong id="completed-quests">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card stat-card">
+
+                    <span class="stat-icon">◇</span>
+
+                    <div>
+
+                        <p class="eyebrow">SKILLS</p>
+
+                        <strong id="skill-count">
+                            0
+                        </strong>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <!-- ==================== SKILLS OVERVIEW ==================== -->
+            <div class="section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            PROGRESSION
+                        </p>
+
+                        <h2>Your Skills</h2>
+
+                    </div>
+
+                    <button
+                        class="text-button"
+                        data-tab-target="skills-tab"
+                        type="button"
+                    >
+                        View all
+                    </button>
+
+                </div>
+
+
+                <!-- Minimized Skills -->
+                <details class="dashboard-collapsible">
+
+                    <summary>
+
+                        <span>
+                            View your skills
+                        </span>
+
+                        <span class="collapsible-count">
+                            <span id="dashboard-skill-count">0</span>
+                        </span>
+
+                    </summary>
+
+
+                    <div
+                        id="home-skills"
+                        class="skill-list"
+                    ></div>
+
+                </details>
+
+            </div>
+
+
+            <!-- ==================== TODAY'S QUESTS ==================== -->
+            <div class="section">
+
+                <div class="section-heading">
+
+                    <div>
+
+                        <p class="eyebrow">
+                            TODAY
+                        </p>
+
+                        <h2>Quests</h2>
+
+                    </div>
+
+                    <button
+                        class="text-button"
+                        data-tab-target="quests-tab"
+                        type="button"
+                    >
+                        View all
+                    </button>
+
+                </div>
+
+
+                <!-- Minimized Quests -->
+                <details class="dashboard-collapsible">
+
+                    <summary>
+
+                        <span>
+                            View today's quests
+                        </span>
+
+                        <span class="collapsible-count">
+                            <span id="dashboard-quest-count">0</span>
+                        </span>
+
+                    </summary>
+
+
+                    <div
+                        id="home-quests"
+                        class="quest-list"
+                    ></div>
+
+                </details>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== QUESTS ==================== -->
+        <section id="quests-tab" class="tab">
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    REAL-LIFE ACTIONS
+                </p>
+
+                <h2>Quests</h2>
+
+                <p class="muted">
+                    Complete meaningful actions and turn them into progression.
+                </p>
+
+            </div>
+
+            <div
+                id="quests-list"
+                class="quest-list"
+            ></div>
+
+        </section>
+
+
+        <!-- ==================== FOCUS ==================== -->
+        <section id="focus-tab" class="tab">
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    DEEP WORK
+                </p>
+
+                <h2>Focus</h2>
+
+                <p class="muted">
+                    Give one task your full attention.
+                </p>
+
+            </div>
+
+
+            <article class="card focus-card">
+
+                <div class="focus-display">
+
+                    <p class="eyebrow">
+                        CURRENT SESSION
+                    </p>
+
+                    <div id="focus-timer">
+                        25:00
+                    </div>
+
+                </div>
+
+
+                <div class="focus-controls">
+
+                    <button
+                        id="start-focus"
+                        class="primary-button"
+                    >
+                        Start Focus
+                    </button>
+
+                    <button
+                        id="stop-focus"
+                        class="secondary-button"
+                        disabled
+                    >
+                        Stop
+                    </button>
+
+                </div>
+
+
+                <div class="focus-info">
+
+                    <span>
+                        Today's focus time
+                    </span>
+
+                    <strong>
+
+                        <span id="focus-total">
+                            0
+                        </span>
+
+                        minutes
+
+                    </strong>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ==================== SKILLS ==================== -->
+        <section id="skills-tab" class="tab">
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    PERSONAL GROWTH
+                </p>
+
+                <h2>Skills</h2>
+
+                <p class="muted">
+                    Track the areas you are developing through real-life action.
+                </p>
+
+            </div>
+
+
+            <div
+                id="skills-list"
+                class="skill-list"
+            ></div>
+
+
+            <!-- Add Skill -->
+            <article class="card add-skill-card">
+
+                <div>
+
+                    <p class="eyebrow">
+                        CUSTOM SKILL
+                    </p>
+
+                    <h3>
+                        Create a skill
+                    </h3>
+
+                    <p class="muted">
+                        Add an area you want to develop.
+                    </p>
+
+                </div>
+
+
+                <div class="add-skill-form">
+
+                    <input
+                        id="skill-name-input"
+                        type="text"
+                        placeholder="e.g. Communication"
+                        maxlength="40"
+                    >
+
+                    <button
+                        id="add-skill-button"
+                        class="primary-button"
+                        type="button"
+                    >
+                        Add Skill
+                    </button>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+        <!-- ==================== COACH ==================== -->
+        <section id="coach-tab" class="tab">
+
+            <div class="page-heading">
+
+                <p class="eyebrow">
+                    PERSONAL COACH
+                </p>
+
+                <h2>Coach</h2>
+
+                <p class="muted">
+                    Understand your progress and decide what to work on next.
+                </p>
+
+            </div>
+
+
+            <div
+                id="coach-content"
+                class="coach-content"
+            ></div>
+
+
+            <div
+                id="coach-results"
+                class="coach-results"
+            ></div>
+
+
+            <button
+                id="start-coach-assessment"
+                class="primary-button"
+                type="button"
+            >
+                Start Coach Assessment
+            </button>
+
+          <button
+    id="logout-button"
+    class="secondary-button"
+    type="button"
+>
+    Log Out
+          </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== COACH ASSESSMENT OVERLAY ==================== -->
+    <div
+        id="coach-assessment-overlay"
+        class="coach-assessment-overlay"
+    >
+
+        <div class="coach-assessment-modal">
+
+            <div id="coach-assessment-content"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== BOTTOM NAVIGATION ==================== -->
+    <nav class="bottom-nav">
+
+        <button
+            class="nav-button active"
+            data-tab="home-tab"
+        >
+
+            <span class="nav-icon">⌂</span>
+            <span>Home</span>
+
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-tab="quests-tab"
+        >
+
+            <span class="nav-icon">◆</span>
+            <span>Quests</span>
+
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-tab="focus-tab"
+        >
+
+            <span class="nav-icon">◷</span>
+            <span>Focus</span>
+
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-tab="skills-tab"
+        >
+
+            <span class="nav-icon">◇</span>
+            <span>Skills</span>
+
+        </button>
+
+
+        <button
+            class="nav-button"
+            data-tab="coach-tab"
+            id="coach-nav-button"
+        >
+
+            <span class="nav-icon">✦</span>
+
+            <span>
+                Coach
+
+                <span
+                    id="coach-alert"
+                    class="coach-alert"
+                >!</span>
+            </span>
+
+        </button>
+
+    </nav>
+
+</div>
+
+
+<!-- ==================== ASSESSMENT ==================== -->
+<div
+    id="assessment-screen"
+    class="assessment-screen hidden"
+>
+
+    <div class="assessment-card">
+
+        <div class="assessment-brand">
+
+            <span class="brand-mark">✦</span>
+
+            <p>
+                PERSONAL RPG
+            </p>
+
+        </div>
+
+
+        <div class="assessment-progress">
+
+            <div id="assessment-progress-bar"></div>
+
+        </div>
+
+
+        <div id="assessment-content"></div>
+
+
+        <div class="assessment-actions">
+
+            <button
+                id="assessment-back"
+                class="secondary-button hidden"
+                type="button"
+            >
+                Back
+            </button>
+
+
+            <button
+                id="assessment-next"
+                class="primary-button"
+                type="button"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==================== DELETE DIALOG ==================== -->
+<div
+    id="delete-dialog"
+    class="modal hidden"
+>
+
+    <div class="modal-backdrop"></div>
+
+
+    <div class="modal-card">
+
+        <p class="eyebrow">
+            CONFIRM ACTION
+        </p>
+
+        <h2>
+            Delete this skill?
+        </h2>
+
+        <p class="muted">
+            The skill and its progress will be removed.
+        </p>
+
+
+        <div class="modal-actions">
+
+            <button
+                id="cancel-delete"
+                class="secondary-button"
+                type="button"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                id="confirm-delete"
+                class="danger-button"
+                type="button"
+            >
+                Delete
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
