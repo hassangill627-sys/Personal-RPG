@@ -1380,4 +1380,93 @@ line-height: 1.5;
     justify-content: space-between;
     gap: 16px;
     margin-bottom: 20px;
-    padding: 16
+    padding: 16px 18px
+    border-radius: 16px;
+    background: rgba(139, 124, 255, 0.12);
+    border: 1px solid rgba(139, 124, 255, 0.25);
+}
+
+.coach-level span {
+    font-size: 14px;
+    opacity: 0.75;
+}
+
+.coach-level strong {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    background: rgba(139, 124, 255, 0.2);
+    font-size: 20px;
+}
+
+.login-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #0f1117;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 420px;
+    padding: 30px 24px;
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.login-card h1 {
+    margin: 8px 0 10px;
+    font-size: 30px;
+}
+
+.login-card > .muted {
+    margin-bottom: 28px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.login-form label {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 14px 15px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: inherit;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.login-form input:focus {
+    border-color: rgba(139, 124, 255, 0.7);
+}
+
+.login-form .primary-button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.login-message {
+    min-height: 20px;
+    margin: 4px 0 0;
+    text-align: center;
+    font-size: 14px;
+}
